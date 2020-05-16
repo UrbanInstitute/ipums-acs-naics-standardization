@@ -46,4 +46,4 @@ docs/
 
 #  large data directories
 data/ipums/*
-data/processed-data/*
+data/processed-data/big/*

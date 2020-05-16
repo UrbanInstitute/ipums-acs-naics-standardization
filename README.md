@@ -6,7 +6,7 @@ Data are organized in the `data` directory and programs in the `scripts` directo
 
 ## Standardizing CES and IPUMS ACS NAICS codes
 
-We went through a manual process to standardize the codes. You can find our decisions and notes on the decisions in this Excel document: [add link here]. You can find the machine readable CSV used for analysis here: [add link here].
+We went through a manual process to standardize the codes. You can find our decisions and notes on the decisions in this Excel document: https://github.com/UI-Research/ipums-acs-naics-standardization/blob/master/data/manual-files/2017-industry-code-list-ces-crosswalk-manual.xlsx. You can find the machine readable CSV used for analysis here: https://github.com/UI-Research/ipums-acs-naics-standardization/blob/master/data/processed-data/2017-ind-ces-crosswalk.csv.
 
 # Running a test using CES national job loss
 
