@@ -18,8 +18,9 @@ manual <- read_excel("data/manual-files/2017-industry-code-list-ces-crosswalk-ma
 manual_un <- manual %>%
   rename(IND = `2017 Census Code`,
          naics = `2017 NAICS Code`,
-         ces_code = `BLS CES Industry_code`) %>%
-  select(IND, naics, ces_code) %>%
+         ces_code = `BLS CES Industry_code`,
+         led_code = `NAICS_2_Digit`) %>%
+  select(IND, naics, ces_code, led_code) %>%
   drop_na(IND) %>%
   mutate(ces_code = na_if(ces_code, "N/A")) %>%
   filter(str_length(IND) == 4) %>%
