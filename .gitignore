@@ -44,6 +44,9 @@ vignettes/*.pdf
 # pkgdown site
 docs/
 
-#  large data directories
+# large data directories
 data/ipums/*
 data/processed-data/big/*
+
+# large data files
+data/ces/ces_all.txt
