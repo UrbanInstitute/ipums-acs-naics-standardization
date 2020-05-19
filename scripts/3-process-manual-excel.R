@@ -103,8 +103,12 @@ is_parent <- recency %>%
 #   - nz, non zero digits at the end of the string to replace
 # Output: string with digits at the end replaced with 0s
 replace_zeroes <- function(cstring, nz){
-  no_zero <- str_replace_all(cstring, "0", "")
-  rep_str <- substr(no_zero, 1, str_length(no_zero) - nz)
+  end <- substr(cstring, length(cstring) - 1, length(cstring))
+  while (end == "0"){
+    cstring <- substr(cstring, 1, length(cstring) - 1)
+    end <- substr(cstring, length(cstring) - 1, length(cstring))
+  }
+  rep_str <- substr(cstring, 1, str_length(cstring) - nz)
   str_pad(rep_str, 8, "right", pad = "0")
 }
 
@@ -117,7 +121,7 @@ get_parent <- function(code_ces){
   num_zeroes <- 1
   while (found_parent == FALSE){
     test_ces <- replace_zeroes(code_ces, num_zeroes)
-    test_filter <- recency %>%
+    test_filter <- is_parent %>%
       filter(ces_code == test_ces) %>%
       nrow()
     if (test_filter > 0){ found_parent = TRUE }
